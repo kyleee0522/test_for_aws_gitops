@@ -6,4 +6,4 @@ resources:
 images:
 - name: 381491860602.dkr.ecr.ap-northeast-2.amazonaws.com/test_for_aws
   newName: 381491860602.dkr.ecr.ap-northeast-2.amazonaws.com/test_for_aws
-  newTag: "20240514150140"
+  newTag: "20240514150530"
