@@ -1,22 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: custinfo
+  name: baseinfo
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: custinfo
+      app: baseinfo
   template:
     metadata:
       labels:
-        app: custinfo
+        app: baseinfo
     spec:
       containers:
-      - name: custinfo
+      - name: baseinfo
         image: 381491860602.dkr.ecr.ap-northeast-2.amazonaws.com/mvp_custinfo_backend
-        #image: 381491860602.dkr.ecr.ap-northeast-2.amazonaws.com/mvp_custinfo_backend:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -49,9 +48,9 @@ spec:
         #     failureThreshold: 5    
         env:
           - name: SPRING_PROFILES_ACTIVE
-            value: "prd"
+            value: "local"
           - name: SPRING_CONTEXT
-            value: "custinfo"
+            value: "baseinfo"
           - name: POD_NAME
             valueFrom:
               fieldRef:
