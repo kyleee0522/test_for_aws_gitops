@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: custinfo
+  labels: # service monitor 의 selector 를 위하여 생성
+    app: custinfo
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+    name: http
+  selector:
+    app: custinfo
+  type: ClusterIP
